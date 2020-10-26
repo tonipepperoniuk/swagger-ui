@@ -27,3 +27,8 @@ stages:
         dockerfile: 'Dockerfile'
         tags: |
           $(tag)
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'swagger-ui-docker-image'
+        publishLocation: 'Container'
