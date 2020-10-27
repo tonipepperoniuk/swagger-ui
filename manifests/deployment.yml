@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tonipepperoniukswaggerui 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tonipepperoniukswaggerui
+  template:
+    metadata:
+      labels:
+        app: tonipepperoniukswaggerui 
+    spec:
+      containers:
+        - name: tonipepperoniukswaggerui 
+          image: agcontainers187.azurecr.io/tonipepperoniukswaggerui
+          ports:
+          - containerPort: 8080
